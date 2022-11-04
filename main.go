@@ -38,13 +38,17 @@ func main() {
 		if err != nil {
 			printError(errReadingInput)
 		}
-		if shouldConvertAgain != "Y" {
-			if strings.ToUpper(TrimSpace(shouldConvertAgain)) != "Y" {
+		if strings.ToUpper(shouldConvertAgain) != "Y" {
+			if strings.TrimSpace(shouldConvertAgain) != "Y" {
 				fmt.Println("Good bye!")
 				break
 			}
 		}
 	}
+}
+
+func TrimSpace(shouldConvertAgain string) {
+	panic("unimplemented")
 }
 
 func printError(err error) {
